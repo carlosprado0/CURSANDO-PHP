@@ -15,9 +15,9 @@
     <main>
 
         <?php 
-            $n = $_GET["nome"]; // $_REQUEST funciona para os cookie, post e get.
-            $s = $_GET["sobrenome"];
-            echo "<p>É um prazer ti conhecer <strong>$n $s</strong>!";
+            $nome = $_GET["nome"]; // $_REQUEST funciona para os cookie, post e get.
+            $sobrenome = $_GET["sobrenome"];
+            echo "<p>É um prazer ti conhecer <strong>$nome $sobrenome</strong>!";
         ?>
 
         <p><a href="javascript:history.go(-1)">Voltar à pagina anterior</a></p>
