@@ -141,6 +141,232 @@
             $novaAno = implode(',', $ano);
             print_r($novaAno);
             echo "<hr>";
-    ?>
+
+            
+            // condicionais if, else, elseif
+            $numero = 50;
+
+             if ($numero == 10):
+             echo "é igual a 10";
+             elseif($numero <= 9):
+                echo "é diferente a 9";
+             else:
+                echo "é diferente de 10";
+            endif;
+            echo "<hr>";
+
+            $media = 7;
+            echo ($media >= 7) ? " approve" : "disapprove";
+            echo "<hr>";
+
+
+            // condicionais switch, case
+            $cor = "azul";
+            switch ($cor):
+                case "azul":
+                echo "Sua cor é azul";
+                break;
+
+                case "verde":
+                echo "Sua cor é verde";
+                break;
+
+                case "amarelo":
+                echo "Sua cor é amarelo";
+                break;
+
+                default:
+                echo "sua cor preferida não está aqui";
+            endswitch;
+            echo "<br>";
+
+            $cor = "verde";
+            switch ($cor):
+                case "azul":
+                echo "Sua cor é azul";
+                break;
+
+                case "verde":
+                echo "Sua cor é verde";
+                break;
+
+                case "amarelo":
+                echo "Sua cor é amarelo";
+                break;
+
+                default:
+                echo "sua cor preferida não está aqui";
+            endswitch;
+            echo "<br>";
+
+            $cor = "amarelo";
+            switch ($cor):
+                case "azul":
+                echo "Sua cor é azul";
+                break;
+
+                case "verde":
+                echo "Sua cor é verde";
+                break;
+
+                case "amarelo":
+                echo "Sua cor é amarelo";
+                break;
+
+                default:
+                echo "sua cor preferida não está aqui";
+            endswitch;
+            echo "<br>";
+
+            $cor = "ciano";
+            switch ($cor):
+                case "azul":
+                echo "Sua cor é azul";
+                break;
+
+                case "verde":
+                echo "Sua cor é verde";
+                break;
+
+                case "amarelo":
+                echo "Sua cor é amarelo";
+                break;
+
+                default:
+                echo "sua cor preferida não está aqui";
+            endswitch;
+            echo "<br>";
+            echo "<hr>";
+
+
+            //Operadores aritmeticos
+            echo 15 + 8;
+            echo "<br>";
+
+            echo 15 - 5;
+            echo "<br>";
+
+            echo 15 / 5;
+            echo "<br>";
+
+            echo 15 * 5;
+            echo "<br>";
+
+            echo 15 % 4;
+            echo "<br>";
+
+            echo 15 ** 3;
+            echo "<br>";
+
+            echo "<hr>";
+
+
+            // Operadores de incremento e decremento
+            //$num = 20;
+            // pré-inc
+            //echo ++$num;
+            //echo "<br>";
+
+            // pos-inc
+            //echo $num++;
+            //echo "<br>";
+
+            // pré-decre
+            //echo --$num;
+            //echo "<br>";
+
+            // pos-decre
+            //echo $num--;
+            //echo "<br>";
+
+
+            //Operadores de atribuição
+            $ex = 10;
+            $ex2 = 35;
+
+            $ex = $ex * $ex2; // da certo com /, -, *, +, ** e %
+            echo $ex;
+
+            echo "<br>";
+            echo "<hr>";
+
+            // Operadores de Comparação
+            echo "<strong>=</strong> -> operador de contribuicao";
+            echo "<br>";
+
+            echo "<strong>==</strong>  -> comparacao";
+            echo "<br>";
+
+            echo "<strong>===</strong>  -> identidade";
+            echo "<br>";
+
+            echo "<strong>!=</strong>  -> nao igual";
+            echo "<br>";
+
+            echo "<strong>!==</strong> -> nao identico";
+            echo "<br>";
+
+            echo "<strong><></strong>  -> diferente";
+            echo "<br>";
+
+            echo "<strong><=</strong>  -> igual ou menor que";
+            echo "<br>";
+
+            echo "<strong>=></strong>  -> igual ou maior que";
+            echo "<br>";
+
+            echo "<b>></b>  -> maior que";
+            echo "<br>";
+
+            echo "<strong><</strong>  -> menor que";
+            echo "<br>";
+
+            echo "<strong><=></strong>  -> se um lado for menor, ele vai mostrar -1, se igual 0, se maior +1";
+            echo "<br>";
+            echo "<hr>";
+
+
+            // Operadores Logicos
+            $nome = "Carlos Prado";
+            $idade = 18;
+
+            if(($idade == 18) and ($nome == "Carlos Prado")): // retorna verdadeiro quando ambas as expressoes estão certas. AND ou &&
+                echo "É verdade";
+            else:
+                echo "Não é verdade";
+            endif;
+            echo "<br>";
+
+            $nome = "Carlos Prado";
+            $idade = 18;
+
+            if(($idade == 18) or ($nome == "Carlos Prado")): // retorna verdadeiro quando pelo menos uma expressao esteja certa. OR ou ||
+                echo "É verdade";
+            else:
+                echo "Não é verdade";
+            endif;
+            echo "<br>";
+
+            $nome = "Carlos Prado";
+            $idade = 18;
+
+            if(($idade == 18) xor ($nome == "Carlos Prado")): // retorna verdadeiro quando apenas uma expressao esteja certa, se tiver duas certo vai dar falso
+                echo "É verdade";
+            else:
+                echo "Não é verdade";
+            endif;
+            echo "<br>";
+
+            $nome = "Carlos Prado";
+            $idade = 19;
+
+            if(!($idade == 18) and ($nome == "Carlos Prado")): // retorna verdadeiro quando a variavel é diferente da nossa expressao
+                echo "É verdade";
+            else:
+                echo "Não é verdade";
+            endif;
+            echo "<br>";
+            echo "<hr>";
+        ?>
 </body>
 </html>
