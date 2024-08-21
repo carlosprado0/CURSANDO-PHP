@@ -472,7 +472,39 @@
             echo "O resultado do sorteio é $sorteio";
             echo "<hr>";
             
+            // Criando Funções
+            function exibirNome() {             // criei a função
+                echo "Meu nome é Carlos Eduardo";
+            }
+            exibirNome();                       // depois puxei ela para aparecer na tela, 0 () é um parametro
+            echo "<br>";
 
+            //e tem essa forma
+            function ExibirNom($nome) {             
+            echo "Meu nome é $nome";
+            }
+            ExibirNom("Carlos Prado");
+            echo "<br>";
+
+
+            function media($nom,$n1,$n2,$n3,$n4){
+                $media = ($n1 + $n2 + $n3 + $n4) / 4;
+                if($media >= 7):                                // : significa oq ele vai fazer
+                    echo "$nom foi aprovado na escola com a $media";
+                else:
+                    echo"$nom foi reprovado na escola";
+                endif;
+            }
+            media("Otavio", 10, 5, 10, 8);
+            echo "<br>";
+            media("Fernanda", 10, 8, 10, 8);
+            echo "<br>";
+            media("Carlos", 10, 9, 10, 8);
+            echo "<br>";
+            media("Marcelo", 10, 10, 10, 10);
+            
+ 
+            
         ?>
 </body>
 </html>
