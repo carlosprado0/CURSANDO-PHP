@@ -367,6 +367,84 @@
             endif;
             echo "<br>";
             echo "<hr>";
+
+
+            // While e Do While
+            $contador = 1;                       // while significa, enquanto, então enquanto a condição for verdadeira o trecho de codigo sera executado
+            while ($contador <= 10){
+                echo "o numero é $contador <br>";
+                $contador++;
+            }
+            echo "<hr>";
+
+         
+            $numeracao = 1;
+
+            do {                                    // Já o Do, ele xecuta e depois faz a verifição para ver se é verdadeira ou nao
+                echo "o numero é $numeracao <br>";
+                $numeracao++;
+            } while ($numeracao <= 10);
+
+            echo "<hr>";
+            // for e foreach
+            for ($contador = 1; $contador <= 10; $contador++): //usado para o numero de repeticoes que vc precisa
+                echo "9 x $contador =".($contador*9)."<br>";
+            endfor;
+                echo "<hr>";
+
+
+            $bolachas = array("bauduco", "trakinas" , "skinni");  // foreach significa para cada, entao para cada item do array ele vai atribuir um valor usando uma variavel $
+                foreach($bolachas as $rankingbolachas => $valor) {
+                    echo $rankingbolachas." - ".$valor. "<br>";
+                }
+             echo "<hr>";
+
+
+             // FUNCOES PARA STRINGS
+            $nome = "carlos";                   
+            $novonome = strtoupper($nome);          //deixa a variavel em maiuscula
+            echo $novonome;
+            echo "<br>";
+            echo "<hr>";
+
+            $nome = "PAMELLA";
+            $novonome = strtolower($nome);          //deixa a variavel em minuscula
+            echo $novonome;
+            echo "<br>";
+            echo "<hr>";
+
+
+            $mensagem = "boa tarde meu consagrado";
+            echo substr($mensagem, 0);
+            echo "<hr>";
+
+
+            $objeto = "teclado";
+            $nvobjeto = str_pad($objeto,9, "*", STR_PAD_BOTH);    // ele adiciona caracteres na nossa string
+            echo $nvobjeto;
+            echo "<hr>";
+
+
+            $palavra = str_repeat("parabens ", 3);
+            echo $palavra;
+            echo "<br>";
+                                                                // duas maneiras de usar o repeat nas nossas strings, o debaixo eu msm testei
+            $letra = "p ";
+            echo $letra = str_repeat($letra, 2);
+            echo "<hr>";
+
+
+            $mensagem = "baitola";
+            echo strlen($mensagem);                            //mostra quantos caracteres há na string
+            echo "<hr>";
+
+            $texto = "a selecao br é fraca dmsss credo ridicula";       // substitui uma palavra que voce escolher
+            $novoTexto = str_replace("br", "BR", $texto);
+            echo $novoTexto;
+            echo "<br>";
+         
+            echo strpos($texto, "selecao");             // mostrar a posição da palavra que voce deseja
+            echo "<hr>";
         ?>
 </body>
 </html>
