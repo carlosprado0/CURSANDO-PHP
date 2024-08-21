@@ -445,6 +445,34 @@
          
             echo strpos($texto, "selecao");             // mostrar a posição da palavra que voce deseja
             echo "<hr>";
+
+
+            //Funções para numeros
+            $exeplo = 1000.43;                          // para fazer a formatação dos numeros e deixar padrao 
+            $preco = number_format($exeplo, 2, ",", ".");
+            echo "o valor do produto é R$ $preco";
+            echo "<hr>";
+
+            echo floor(4.30);  //serve para arrendondar para baixo
+            echo "<br>";
+            echo "<hr>";
+
+            echo round(4.96);  //serve para arrendondar para o maais proximo
+            echo "<br>";
+            echo "<hr>";
+
+            echo ceil(4.87);  //serve para arrendondar para cima
+            echo "<br>";
+            echo "<hr>";
+
+            
+            echo rand(1,1000);
+            echo "<br>";
+            $sorteio = rand(1,20);  // serve para fazer sorteios
+            echo "O resultado do sorteio é $sorteio";
+            echo "<hr>";
+            
+
         ?>
 </body>
 </html>
