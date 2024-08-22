@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -465,9 +465,10 @@
             echo "<br>";
             echo "<hr>";
 
-            
-            echo rand(1,1000);
+            $numeroAleatorio = rand(1,1000);
+            echo "Numero aleatorio é $numeroAleatorio";
             echo "<br>";
+
             $sorteio = rand(1,20);  // serve para fazer sorteios
             echo "O resultado do sorteio é $sorteio";
             echo "<hr>";
@@ -502,9 +503,49 @@
             media("Carlos", 10, 9, 10, 8);
             echo "<br>";
             media("Marcelo", 10, 10, 10, 10);
+            echo "<hr>";
+
+
+            //SuperGlobais
+            echo "<h1>SuperGlobal GLOBALS</h1>";
+            $x = 10;                        // com a globals podemos usar as variavel globais de  qualquer lugar de script
+            $y = 15;
+
+            function soma() {
+                echo $GLOBALS['x'] + $GLOBALS['y'];
+            }
+            soma();
+            echo "<br>";
+            echo "<hr>";
+
+            echo $_SERVER['PHP_SELF']."<br>";       // no site de php há mais indices do globar_$server
+            echo $_SERVER['SERVER_NAME']."<br>";
+            echo $_SERVER['SCRIPT_FILENAME']."<br>";
+            echo $_SERVER['SERVER_PORT']."<br>";
+            echo $_SERVER['REMOTE_ADDR']."<br>";
+            echo "<hr>";
+
+
+            setcookie("dia", "quinta", time() + 3600);       //3600 = 1h soq em segundos
+            echo "<h1>SuperGlobal COOKIE</h1>";
+            var_dump($_COOKIE);
+            echo "<hr>";
+
             
- 
-            
+            session_start();
+            $_SESSION["teste"] = "CORRETO!";
+            echo "<h1>SuperGlobal SESSION</h1>";
+            var_dump($_SESSION);
+            echo "<hr>";
+
+            echo "<h1>SuperGlobal ENV</h1>";
+            var_dump($_ENV);
+            echo "<hr>";
+
+
+            //superGlobal REQUEST puxa dos dois e colaca em um unico array
+
+             
         ?>
 </body>
 </html>
