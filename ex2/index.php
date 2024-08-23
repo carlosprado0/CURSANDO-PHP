@@ -545,7 +545,26 @@
 
             //superGlobal REQUEST puxa dos dois e colaca em um unico array
 
-             
+
+            echo "<h1>Antecessor e Sucessor</h1>";
+            $num = 20;
+
+            echo "Seu número é <strong>$num</strong>";
+            echo "<br>";
+            echo "O antecessor de $num é ". ($num - 1);
+            echo "<br>";
+            echo "O sucessor de $num é ". ($num + 1);
+
+
+            echo "<h1>Outro Sorteador</h1>";
+            $num = rand(0,10);
+            echo "gerando seu número aleatorio...";
+            echo "<br>";
+            echo "O valor gerado é $num";
+               
+
+            //filtros
+            
         ?>
 </body>
 </html>
