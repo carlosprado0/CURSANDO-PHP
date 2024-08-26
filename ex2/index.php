@@ -554,6 +554,7 @@
             echo "O antecessor de $num é ". ($num - 1);
             echo "<br>";
             echo "O sucessor de $num é ". ($num + 1);
+            echo "<hr>";
 
 
             echo "<h1>Outro Sorteador</h1>";
@@ -561,9 +562,17 @@
             echo "gerando seu número aleatorio...";
             echo "<br>";
             echo "O valor gerado é $num";
+            echo "<hr>";
                
 
-            //filtros
+            //_SESSION
+            echo "<h1>SESSION</h1>";
+           
+        
+            $_SESSION['cor'] = "Verde";
+            $_SESSION['carro'] = "Uno";
+
+            echo $_SESSION['cor']. "<br>" .$_SESSION['carro'];
             
         ?>
 </body>
