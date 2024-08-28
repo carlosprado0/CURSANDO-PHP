@@ -14,33 +14,36 @@ if (isset($_POST['btn-entrar'])):
 
     // Verificação de campos vazios
     if (empty($login) or empty($senha) or empty($email)):
-        $erros[] = "<li> Todos os campos (login, senha, email) precisam ser preenchidos </li>";
+        $erros[] = "<li>Todos os campos (login, senha e email) precisam ser preenchidos</li>";
     else:
         // Validação de email
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)):
-            $erros[] = "<li> O email inserido não é válido </li>";
+            $erros[] = "<li>O email inserido não é válido</li>";
         else:
             // Verifica se o login existe no banco de dados
-            $sql = "SELECT login FROM clientes WHERE login = '$login'";
+            $sql = "SELECT * FROM clientes WHERE login = '$login'";
             $resultado = mysqli_query($connect, $sql);
 
             if (mysqli_num_rows($resultado) > 0):
-                // Lógica adicional, como verificar o telefone ou email
-                // Exemplo: Verificar se o telefone corresponde ao login no banco de dados
-                $sql_senha = "SELECT senha FROM clientes WHERE login = '$login' AND senha = '$senha'";
-                $resultado_sen = mysqli_query($connect, $sql_senha);
-                
-                if(mysqli_num_rows($resultado_sen) > 0):
-                    echo "Login realizado com sucesso!";
+                $dados = mysqli_fetch_array($resultado);
+
+                // Verificar se a senha fornecida corresponde ao hash no banco de dados (com md5)
+                if(md5($senha) == $dados['senha']):
+                    // Senha correta, loga o usuário
+                    $_SESSION['logado'] = true;
+                    $_SESSION['id_cliente'] = $dados['id'];
+                    header('Location: home.php');
+                    exit(); // É sempre bom usar exit() depois do redirecionamento
                 else:
-                    $erros[] = "<li> Telefone não corresponde ao login fornecido </li>";
+                    $erros[] = "<li>A senha não corresponde ao login fornecido</li>";
                 endif;
             else:
-                $erros[] = "<li> Usuário inexistente </li>";
+                $erros[] = "<li>Usuário inexistente</li>";
             endif;
         endif;
-    endif; 
+    endif;
 endif;
+
 ?>
 
 <!DOCTYPE html>
@@ -71,7 +74,7 @@ endif;
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
         <br>
     Nome Completo: <input type="text" name="login"><br>
-    Senha: <input type="password" name="telefone"><br>
+    Senha: <input type="password" name="senha"><br>
     Email: <input type="text" name="email"><br>
     <button type="submit" name="btn-entrar"> Entrar </button>
 
